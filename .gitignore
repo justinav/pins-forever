@@ -1,4 +1,2 @@
-tmp/
-tmp/pids
-tmp/cache
+tmp/**
 tmp/cache/**
