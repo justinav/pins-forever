@@ -1,12 +1,14 @@
-<% if !@errors.nil? %>
-  <div class="error">
-    <label><%= pluralize(@errors.count, "error") %> prohibited this pin from being saved:</label>
-    <ol>
-      <% @errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ol>
-  </div>
-<% end %>
+<div class="form-container">
+	<% if !@errors.nil? %>
+	  <div class="error">
+	    <label><%= pluralize(@errors.count, "error") %> prohibited this pin from being saved:</label>
+	    <ol>
+	      <% @errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	    </ol>
+	  </div>
+	<% end %>
 
-<%= render :partial => 'pins/form', :formats => [:html] %>
+	<%= render :partial => 'pins/form', :formats => [:html] %>
+</div>
