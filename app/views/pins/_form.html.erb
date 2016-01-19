@@ -1,0 +1,28 @@
+<%= form_for @pin do |f| %>
+	<div class="input-group">
+		<label for="pin_title" class="input-group-addon">Title</label>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
+	<br>
+	<div class="input-group">
+		<label for="pin_url" class="input-group-addon">Url</label>
+		<%= f.text_field :url, class: "form-control" %>
+	</div>
+	<br>
+	<div class="input-group">
+		<label for="pin_text" class="input-group-addon">Text</label>
+		<%= f.text_field :text, class: "form-control" %>
+	</div>
+	<br>
+	<div class="input-group">
+		<label for="pin_slug" class="input-group-addon">Slug</label>
+		<%= f.text_field :slug, class: "form-control" %>
+	</div>
+	<br>
+	<div class="form-group">
+		<label for="pin_category_id">Category</label>
+		<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {:class=>'form-control'}) %>
+	</div>
+	<br>
+	<%= f.button(class: "btn") %>
+<% end %>
