@@ -48,3 +48,9 @@ gem 'rspec'
 gem 'rspec-rails'
 
 gem 'rails_12factor'
+
+# Use PaperClip to store and call photos
+gem 'paperclip'
+
+# Use SkillCrush's AWS account
+gem 'aws-sdk', '< 2.0'

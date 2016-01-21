@@ -40,48 +40,49 @@ RSpec.describe PinsController do
 				url: "http://railswizard.org", 
 				slug: "rails-wizard", 
 				text: "A fun and helpful Rails Resource",
-				resource_type: "rails"}    
-			end
+				resource_type: "rails"
+			}    
+		end
 			
-			after(:each) do
-				pin = Pin.find_by_slug("rails-wizard")
-				if !pin.nil?
-					pin.destroy
-				end
+		after(:each) do
+			pin = Pin.find_by_slug("rails-wizard")
+			if !pin.nil?
+				pin.destroy
 			end
-			
-			it 'responds with a redirect' do
-				post :create, pin: @pin_hash
-				expect(response.redirect?).to be(true)
-			end
-			
-			it 'creates a pin' do
-				post :create, pin: @pin_hash  
-				expect(Pin.find_by_slug("rails-wizard").present?).to be(true)
-			end
-			
-			it 'redirects to the show view' do
-				post :create, pin: @pin_hash
-				expect(response).to redirect_to(pin_url(assigns(:pin)))
-			end
-			
-			it 'redisplays new form on error' do
-	      # The title is required in the Pin model, so we'll
-	      # delete the title from the @pin_hash in order
-	      # to test what happens with invalid parameters
-	      @pin_hash.delete(:title)
-	      post :create, pin: @pin_hash
-	      expect(response).to render_template(:new)
-	  end
+		end
+		
+		it 'responds with a redirect' do
+			post :create, pin: @pin_hash
+			expect(response.redirect?).to be(true)
+		end
+		
+		it 'creates a pin' do
+			post :create, pin: @pin_hash  
+			expect(Pin.find_by_slug("rails-wizard").present?).to be(true)
+		end
+		
+		it 'redirects to the show view' do
+			post :create, pin: @pin_hash
+			expect(response).to redirect_to(pin_url(assigns(:pin)))
+		end
+		
+		it 'redisplays new form on error' do
+			# The title is required in the Pin model, so we'll
+			# delete the title from the @pin_hash in order
+			# to test what happens with invalid parameters
+			@pin_hash.delete(:title)
+			post :create, pin: @pin_hash
+			expect(response).to render_template(:new)
+		end
 	  
-	  it 'assigns the @errors instance variable on error' do
-	      # The title is required in the Pin model, so we'll
-	      # delete the title from the @pin_hash in order
-	      # to test what happens with invalid parameters
-	      @pin_hash.delete(:title)
-	      post :create, pin: @pin_hash
-	      expect(assigns[:errors].present?).to be(true)
-	  end    
+		it 'assigns the @errors instance variable on error' do
+		  # The title is required in the Pin model, so we'll
+		  # delete the title from the @pin_hash in order
+		  # to test what happens with invalid parameters
+		  @pin_hash.delete(:title)
+		  post :create, pin: @pin_hash
+		  expect(assigns[:errors].present?).to be(true)
+		end    
 	  
 	end
 
@@ -136,12 +137,10 @@ RSpec.describe PinsController do
 			end
 			
 			it 'edits a pin' do
-				put :update, :pin => @pin_hash, :id => @pin.id
 				expect(Pin.find_by_slug("rails-wizard").present?).to be(true)
 			end
 			
 			it 'redirects to the edit view' do
-				put :update, :pin => @pin_hash, :id => @pin.id
 				expect(response).to redirect_to(pin_url(assigns(:pin)))
 			end
 		end

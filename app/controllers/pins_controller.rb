@@ -2,7 +2,6 @@ class PinsController < ApplicationController
   
   def index
     @pins = Pin.all
-    @pin = Pin.find_by_slug(params[:slug])
   end
 
   def show_by_name
@@ -49,7 +48,7 @@ class PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :url, :slug, :text, :category_id)
+    params.require(:pin).permit(:title, :url, :slug, :text, :category_id, :image)
   end
  
 end

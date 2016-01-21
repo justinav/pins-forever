@@ -6,27 +6,37 @@ body {
 a {
   color: #dd5566;
 }
+
+img {
+max-width: 100%;
+}
+
 h1 {
   font-family: 'Lobster', cursive;
   font-size: 60px;
   color: #dd5566;
 }
+
 .pin-container{
   padding: 10px;
 }
+
 .pin {
   padding: 40px;
   min-height: 343px;
   background-color: #fff;
   border: 1px solid #efefef;
 }
+
 .show-pin{
   background-color: #fff;
   padding: 40px;  
 }
+
 .url {
   word-break: break-all;
 }
+
 hr{
   clear:both;
 }
