@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.1.6'
 
+# Use PaperClip to store and call photos
+gem 'paperclip'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -44,13 +47,10 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+# Use SkillCrush's AWS account
+gem 'aws-sdk', '< 2.0'
+
 gem 'rspec'
 gem 'rspec-rails'
 
 gem 'rails_12factor'
-
-# Use PaperClip to store and call photos
-gem 'paperclip'
-
-# Use SkillCrush's AWS account
-gem 'aws-sdk', '< 2.0'

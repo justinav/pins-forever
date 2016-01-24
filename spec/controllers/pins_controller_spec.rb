@@ -40,7 +40,7 @@ RSpec.describe PinsController do
 				url: "http://railswizard.org", 
 				slug: "rails-wizard", 
 				text: "A fun and helpful Rails Resource",
-				resource_type: "rails"
+				category: "rails"
 			}    
 		end
 			
@@ -117,7 +117,7 @@ RSpec.describe PinsController do
 				url: "http://railswizard.org", 
 				slug: "rails-wizard", 
 				text: "A fun and helpful Rails Resource",
-				resource_type: "rails"
+				category: "rails"
 			}    
 		end
 			
