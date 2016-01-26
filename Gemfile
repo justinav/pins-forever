@@ -32,6 +32,17 @@ gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use PaperClip to store and call photos
+gem 'paperclip'
+
+# Use SkillCrush's AWS account
+gem 'aws-sdk', '< 2.0'
+
+gem 'rspec'
+gem 'rspec-rails'
+
+gem 'rails_12factor'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -44,13 +55,4 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
-# Use PaperClip to store and call photos
-gem 'paperclip'
 
-# Use SkillCrush's AWS account
-gem 'aws-sdk', '< 2.0'
-
-gem 'rspec'
-gem 'rspec-rails'
-
-gem 'rails_12factor'
