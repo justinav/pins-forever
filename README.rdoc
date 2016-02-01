@@ -1,22 +1,16 @@
-== README
+Pins Forever
+======
 
-* Ruby 2.1.6
+a pinning app for storing links
 
-* Rails 4.2.0
 
-* System dependencies
+###Currently 
+* Running on Ruby 2.1.6 & Rails 4.2.0
+* Deployed to Heroku
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* Run tests: rspec spec
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployed to heroku
-
-* ...
-
+###Working on
+* User Authentication
+* Password Encryption
+* Sessions
+* Ability for users to create boards, pin and re-pin
