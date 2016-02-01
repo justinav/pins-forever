@@ -1,14 +1,14 @@
-# Pins Forever
+<h1>Pins Forever</h1>
 
 a pinning app for storing links
 
 
-### Currently 
+Currently 
 * Running on Ruby 2.1.6 & Rails 4.2.0
 * Deployed to Heroku
 
 
-### Working on
+Working on
 * User Authentication
 * Password Encryption
 * Sessions
