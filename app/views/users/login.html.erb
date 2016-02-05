@@ -1,0 +1,19 @@
+<div class="form-container">
+	<p><%= @error %></p>
+	<%= form_tag('/login') do %>
+	<div class="input-group">
+		<%= label_tag 'email', nil, class: "input-group-addon" %>
+		<%= email_field_tag 'email', nil, class: "form-control" %>
+	</div>
+	<br />
+	<div class="input-group">
+		<%= label_tag 'password', nil, class: "input-group-addon" %>
+		<%= password_field_tag 'secret', nil, class: "form-control" %>
+	</div>
+	<br />
+	<div class="btn">
+		<%= submit_tag %>
+	</div>
+	<% end %>
+
+</div>
