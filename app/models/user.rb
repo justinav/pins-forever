@@ -1,10 +1,18 @@
 class User < ActiveRecord::Base
+  validates_presence_of :first_name, :last_name, :email, :password
+  validates_uniqueness_of :email
+
+  has_secure_password
+
 	def self.authenticate(email, password)
-		user = User.find_by_email_and_password(email,password)
-		if user
-			user
-		else
-			nil
-		end
-	end
+    @user = User.find_by_email(email)
+
+    if !@user.nil?
+      if @user.authenticate(password)
+        return @user
+      end
+    end
+
+    return nil
+  end
 end
