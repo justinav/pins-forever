@@ -1,28 +1,11 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-  end
-
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
-
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
-  def edit
-  end
-
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -37,8 +20,12 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
+  def show
+  end
+
+  def edit
+  end
+
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -52,21 +39,24 @@ class UsersController < ApplicationController
   end
 
   def login
-    #login form
   end
 
   def authenticate
-    user = User.authenticate(params[:email],params[:password])
-    if user
-      redirect_to "/users/#{user.id}"
-    else
-      @error = "Wrong password or username."
+    @user = User.authenticate(params[:email], params[:password])
+    if @user.nil?
+      @errors = "Either email or password is incorrect"
       render :login
+    else
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+  def logout
+    session.delete(:user_id)
+    redirect_to root_path
+  end
+
   def destroy
     @user.destroy
     respond_to do |format|
@@ -76,13 +66,17 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password)
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
+
+  def require_login
+    if current_user.nil?
+      redirect_to login_path
     end
   end
+end

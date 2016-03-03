@@ -1,7 +1,7 @@
 <div class="pins">
   <% @pins.each_slice(3) do |row| %>
   <div class="row">
-    <% row.each do |pin| %>      
+    <% row.each do |pin| %>
       <div class="pin-container col-md-4">
         <div class="pin">
           <div class="pin-header row">
@@ -11,7 +11,7 @@
               <% elsif "#{pin.category.name}" == "rails" %>
                 <%= image_tag('rails-logo-thumbnail.png') %>
               <% elsif "#{pin.category.name}" == "ruby" %>
-                <%= image_tag('ruby-logo-thumbnail.png') %>                
+                <%= image_tag('ruby-logo-thumbnail.png') %>
               <% end %>
             </div>
             <div class="col-xs-9">
@@ -29,5 +29,3 @@
   </div>
   <% end %>
 </div>
-
-<hr/>
