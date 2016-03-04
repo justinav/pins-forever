@@ -1,5 +1,5 @@
 <%= form_for @pin, multipart: true do |f| %>
-<%= f.hidden_field :user, value: :current_user %>
+<%= f.hidden_field :user, value: :user_id %>
 
 	<div class="input-group">
 		<label for="pin_title" class="input-group-addon">Title</label>
