@@ -27,7 +27,7 @@ class CreateCategories < ActiveRecord::Migration
     end
 
     if Pin.where("category_id is null").empty?
-      remove_column :pins
+      # remove_column :pins
       puts "MIGRATION SUCCESSFUL!"
       puts "All your data has been migrated successfully."
     else
