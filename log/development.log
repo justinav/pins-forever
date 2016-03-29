@@ -11416,3 +11416,46 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 09:07:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (12.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (2.3ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 70ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:07:37 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 831ms (Views: 829.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:07:38 -0400
+
+
+Started GET "/assets/pins.self-2006c45508d28eea817e8bb2c6117789e636a97db9131f7da7a582026a360e54.css?body=1" for ::1 at 2016-03-29 09:07:38 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:07:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:07:38 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 09:07:45 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:07:45 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.5ms)
