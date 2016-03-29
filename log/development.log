@@ -11493,3 +11493,1211 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:10:47 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:21:47 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 317ms (Views: 311.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/scaffolds.self-c10979dbb4bce1c11a14180d4762b0f509f81e8e29e2e4be5094dd2b082ca7d9.css?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/application.self-36ed6d6e2c4987b535c0b17369ae52f911081bcc67c86dd53469cc529d88afab.css?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:21:48 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:22:15 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 267ms (Views: 265.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-e5d5e61988bb0ec77f76a6e8657e7c0c20d83e7ec25f21ff545ef50a287583cf.css?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:22:15 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:22:21 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for ::1 at 2016-03-29 09:22:22 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (92.6ms)
+  Rendered users/new.html.erb within layouts/application (302.9ms)
+Completed 200 OK in 330ms (Views: 318.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-03-29 09:22:25 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:22:25 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:29:44 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 207ms (Views: 199.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/assets/application.self-8f8434ae8bbffcd35e5fe807bfac23612a1ed9f511f0115315d91fed494c8a92.css?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:29:44 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:29:50 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 127ms (Views: 125.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-22b668de3ab84d846562bd2e8f06c2334377259b61fd6b99a4d40832881bcb1f.css?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:29:50 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:30:04 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 139ms (Views: 138.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-ba653bc5389d8094608e7779eb0424c0331835428349db6e638a635ab89870a9.css?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:30:04 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 09:31:22 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 245ms (Views: 237.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-7788b2a35551ddd13e09d9e49b2abc103951904bb450bc676ae94443add6b1b3.css?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 09:31:22 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:42:56 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (15.1ms)
+  [1m[35mUser Load (69.4ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 810ms (Views: 718.4ms | ActiveRecord: 69.4ms)
+
+
+Started GET "/assets/application.self-a4ef49060f7c1ade3e0c6edc4b9d853ce64cab47766287c01190e527647d1b55.css?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/assets/trigrey-420b22399105215a5bd984661a1f5832a4c941975dcce55d69f3ba37f46123eb.png" for ::1 at 2016-03-29 10:42:57 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:44:06 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 646ms (Views: 639.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.self-62e20aa1a9e5b6162ecb900fac571367cff44ebde134af2e297ee1fbdfb6fd16.css?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/assets/trigrey-85a3dcae2adfa8ef39635a2453a7aad8f6b2b00ef1c4d263dc8493142da92eb6.svg" for ::1 at 2016-03-29 10:44:07 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:49:00 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (10.9ms)
+  [1m[35mUser Load (3.0ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 738ms (Views: 710.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:49:01 -0400
+
+
+Started GET "/assets/application.self-82f2d2b261249c6274f194b51aa5d1d99d63a68df79591d6a3d166522f1d85bb.css?body=1" for ::1 at 2016-03-29 10:49:01 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:49:02 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:49:02 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:49:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:49:02 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:49:02 -0400
+
+
+Started GET "/assets/trigrey-00f28441cb311135d907b628cbf0550f651f4cc9b166dba2b6cad2b7e32eeceb.svg" for ::1 at 2016-03-29 10:49:02 -0400
+
+
+Started GET "/signup" for ::1 at 2016-03-29 10:49:11 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (14.3ms)
+  Rendered users/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 84ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:49:15 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/signup" for ::1 at 2016-03-29 10:49:16 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (9.9ms)
+  Rendered users/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 115ms (Views: 109.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:49:18 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 77ms (Views: 73.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:51:05 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (9.0ms)
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 905ms (Views: 886.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.self-bcdbac130f8a1c41f97b6e339b2deb4f1563546942c00ffa92807ace4a63f6f2.css?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:51:06 -0400
+
+
+Started GET "/assets/trigrey-7e8f64cbbbec58920c50dc23cc3b7996fb10bc9f5fa97b3d6d0db6784386010d.svg" for ::1 at 2016-03-29 10:51:07 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:51:22 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 539ms (Views: 534.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-47e481b064364135a01c7d455f4993eb44c5591ccfc6ad4af47599b6ae26e72b.css?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/assets/trigrey-7e8f64cbbbec58920c50dc23cc3b7996fb10bc9f5fa97b3d6d0db6784386010d.svg" for ::1 at 2016-03-29 10:51:23 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:52:44 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 977ms (Views: 947.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/application.self-f43c5e9b1ddd3526b19a392a3769f36ac87e5e9ec440d70ae2482d8a900838df.css?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:52:46 -0400
+
+
+Started GET "/assets/trigrey-c30c100cfa850fdf0eabdcf55da7e05187e1e8c2bc9e4107e353b5b6377eb837.svg" for ::1 at 2016-03-29 10:52:47 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:55:18 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (14.1ms)
+  [1m[35mUser Load (5.4ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 411ms (Views: 383.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:55:19 -0400
+
+
+Started GET "/assets/application.self-f43c5e9b1ddd3526b19a392a3769f36ac87e5e9ec440d70ae2482d8a900838df.css?body=1" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/assets/trigrey-c30c100cfa850fdf0eabdcf55da7e05187e1e8c2bc9e4107e353b5b6377eb837.svg" for ::1 at 2016-03-29 10:55:20 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:55:22 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 106ms (Views: 102.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/application.self-f43c5e9b1ddd3526b19a392a3769f36ac87e5e9ec440d70ae2482d8a900838df.css?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:55:22 -0400
+
+
+Started GET "/assets/trigrey-c30c100cfa850fdf0eabdcf55da7e05187e1e8c2bc9e4107e353b5b6377eb837.svg" for ::1 at 2016-03-29 10:55:23 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:55:47 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (3.4ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 720ms (Views: 714.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/application.self-9d98dc5e0596fb2c6330d108f11ac9d938e8a6340fe8f92c43bd3f6c0f54d580.css?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 10:55:49 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:57:41 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (4.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 1002ms (Views: 980.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/application.self-d2501bad2954b5c6c3b102ed73b895fc094f42f6f66f981ef9875d5ed0cf1c61.css?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:57:42 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 10:57:43 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 10:59:30 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 614ms (Views: 608.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/application.self-ffa7432da8e7c39e62101582ea353e93b473fd4cee81f6c1ff30176145f817cf.css?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 10:59:31 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:04:32 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (15.8ms)
+  [1m[36mUser Load (4.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 1102ms (Views: 1073.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/application.self-8bf5d5cf17ec2f4621f5eab64287554c7cf4a7833d6323d4f1fc77ceaf8b082c.css?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:04:34 -0400
+
+
+Started GET "/assets/trigrey-32f560b216595c61661ff1ac0826028bae32643a437749a7f2e01fe2b1d08ee4.svg" for ::1 at 2016-03-29 11:04:35 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:06:16 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 522ms (Views: 517.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/application.self-979947b9de02cafa4627d8a7398c7ff1d4c77bf19f8c8ba7ac6fdfdcb6170b96.css?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/assets/trigrey-87bce5076e521c47cf65c5cc7f84f54ccda88d95103e0815abee1dd10908b85a.svg" for ::1 at 2016-03-29 11:06:17 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:07:42 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 133ms (Views: 128.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/application.self-ffa7432da8e7c39e62101582ea353e93b473fd4cee81f6c1ff30176145f817cf.css?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 11:07:43 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:07:56 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (4.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 463ms (Views: 455.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.self-ef18d19af9e8cc5342b9221addf4a106abedb85c5c2443e283b0aaebf7b08188.css?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/assets/trigrey-32f560b216595c61661ff1ac0826028bae32643a437749a7f2e01fe2b1d08ee4.svg" for ::1 at 2016-03-29 11:07:57 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:08:10 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 432ms (Views: 426.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-7c31405c89d40fe943ddd04ca6cfa38a986eaf87b3fc47c8b2a8db930dc7a69c.css?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/assets/trigrey-32f560b216595c61661ff1ac0826028bae32643a437749a7f2e01fe2b1d08ee4.svg" for ::1 at 2016-03-29 11:08:11 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:09:04 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (13.1ms)
+  [1m[35mUser Load (7.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 1278ms (Views: 1248.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/application.self-1800ce1e2e84eb2595785e8aa3341155632c2910f867740c6fd21081faf3dfce.css?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:09:06 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 11:09:07 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:09:22 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 376ms (Views: 371.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/application.self-4b50be64c70f36c18451c95f390d2570d0fa763687a32bfc13390fd31ced6197.css?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 11:09:23 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:11:49 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 127ms (Views: 123.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/application.self-4b50be64c70f36c18451c95f390d2570d0fa763687a32bfc13390fd31ced6197.css?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/assets/trigrey-04fce05c1ae1ac1acb9d425a7176eac33c5aaa398b42022d1e9c34efb2f06482.png" for ::1 at 2016-03-29 11:11:50 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:11:57 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 670ms (Views: 664.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:11:57 -0400
+
+
+Started GET "/assets/application.self-6a04d4d8acda39f7b79544b8184d6ff600e25e99e06bf0282246bfcccde68274.css?body=1" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/assets/trigrey-6abeb42659bc173a6947fe4e1ede2447c229bae17aab70d5a76d83e41d32af1e.svg" for ::1 at 2016-03-29 11:11:58 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:13:09 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 431ms (Views: 427.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-8d2ab616164e5b83031e828170e9eeee71b7f13f7b4b568dace0a7af96ed80d9.css?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/assets/trigrey-ad6d1d73be94daeb579eeb5f5392d1ed6d411d73f013c3f40cffab94340b5554.svg" for ::1 at 2016-03-29 11:13:10 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:13:21 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (5.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 387ms (Views: 378.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/application.self-0b004fa543425bc5ba4c358c59a9888438e51adf28eea1e614b5907019c9140b.css?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/assets/trigrey-ad6d1d73be94daeb579eeb5f5392d1ed6d411d73f013c3f40cffab94340b5554.svg" for ::1 at 2016-03-29 11:13:22 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:14:45 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 723ms (Views: 718.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/application.self-efcfbfc527dcb56c4174a2b21010898ef54de8b5deb7ecb64beac596f1221449.css?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 11:14:47 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 11:15:00 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 598ms (Views: 592.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 11:15:00 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 11:15:00 -0400
+
+
+Started GET "/assets/application.self-e87abd2314d8b064f47d6538c1f45040945f903d5f9573b7f5910a7962af6e50.css?body=1" for ::1 at 2016-03-29 11:15:00 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 11:15:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 11:15:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 11:15:01 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 11:15:01 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 11:15:01 -0400
+
+
+Started GET "/login" for ::1 at 2016-03-29 12:56:25 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (15.5ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 650ms (Views: 623.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.self-ca8e9450860bd0615e2b9966b1fdfb1b93128951b2d76d5be8b0b21205d4ddea.css?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 12:56:26 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 12:56:27 -0400
+
+
+Started GET "/signup" for ::1 at 2016-03-29 12:57:03 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (29.0ms)
+  Rendered users/new.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 274ms (Views: 262.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 12:57:07 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for ::1 at 2016-03-29 12:57:09 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-03-29 12:57:11 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for ::1 at 2016-03-29 12:57:11 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for ::1 at 2016-03-29 12:57:22 -0400
+Processing by UsersController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c9Z7wD3CgiwnuhFKu9gjRk1IfkcEXvpYKVX9Jw9EhQ8/yQGZKLsgfvv+Nk6IDlzeGzrMnM8/RdvE8DzlbPUXog==", "email"=>"santa@email.com", "password"=>"[FILTERED]", "commit"=>"Save changes"}
+  [1m[35mUser Load (30.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "santa@email.com"]]
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 232ms (ActiveRecord: 57.6ms)
+
+
+Started GET "/users/2" for ::1 at 2016-03-29 12:57:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (6.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 26.8ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users/2" for ::1 at 2016-03-29 12:57:53 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 121ms (Views: 113.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/application.self-c2695c1c52227c312779293d3b9727dff99585d44af112b7397acb959ade8eff.css?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 12:57:53 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 12:58:01 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (26.6ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (60.0ms)
+Completed 200 OK in 235ms (Views: 68.7ms | ActiveRecord: 72.1ms)
+
+
+Started GET "/" for ::1 at 2016-03-29 12:59:49 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.5ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (20.9ms)
+Completed 200 OK in 361ms (Views: 332.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/application.self-0aec41dedcb1c96e9e68cf0e9eb45b4023454d9259cacda3e941482bfb97a896.css?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 12:59:50 -0400
+
+
+Started GET "/pins/name-ruby-slids" for ::1 at 2016-03-29 12:59:53 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"ruby-slids"}
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "ruby-slids"]]
+  Rendered pins/show.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pins/name-ruby-slids" for ::1 at 2016-03-29 13:00:00 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"ruby-slids"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "ruby-slids"]]
+  Rendered pins/show.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 137ms (Views: 134.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-08ed302456f64461dcee65fcc47e4a3b64823a62dc3e6df7b39ca3d3ecee4004.css?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-7019c7cbdb9fd407086d8afad1e5614e5b999a9c47004475117ab204f0472f70.css?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 13:00:00 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 13:00:11 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 40.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/pins/name-ruby-slids" for ::1 at 2016-03-29 13:01:10 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"ruby-slids"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "ruby-slids"]]
+  Rendered pins/show.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 139ms (Views: 136.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/name-ruby-slids" for ::1 at 2016-03-29 13:01:10 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"ruby-slids"}
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "ruby-slids"]]
+  Rendered pins/show.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-ab91c0a99077e37ebdc64ab596322217aed906d8b57bd5cdbbee042fba0522bd.css?body=1" for ::1 at 2016-03-29 13:01:10 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 13:01:24 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.9ms)
