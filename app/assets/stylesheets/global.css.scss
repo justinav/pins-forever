@@ -1,24 +1,30 @@
 @import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $brand-color: Gold;
-$text-color: #fff;
+$text-color: #ffffff;
 $background-color: #303233;
+$dark-grey: #545454;
+$light-grey: #999999;
 
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 body {
+  @extend html;
   background: url(asset-path('trigrey.png')) repeat;
   background-size: 30px;
   color: $text-color;
   font-family: Helvetica, sans-serif;
+  font-weight: 100;
   font-size: 16px;
   line-height: 1.2;
 }
 
-a {
+a,
+a:visited {
   color: $brand-color;
-
-  &:visited {
-    color: inherit;
-  }
 }
 
 img {
@@ -29,35 +35,6 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 60px;
   color: $brand-color;
-}
-
-.pin-container{
-  padding: 10px;
-}
-
-.pin {
-  padding: 40px;
-  min-height: 343px;
-  background-color: $background-color;
-  border-radius: 8px;
-}
-
-.show-pin{
-  background-color: $background-color;
-  padding: 40px;
-}
-
-.url {
-  word-break: break-all;
-}
-
-hr{
-  clear:both;
-}
-
-.form-container {
-  max-width: 500px;
-  margin: 0 auto;
 }
 
 pre {
@@ -105,4 +82,144 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+// Layout
+.site-wrapper{
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+.site-header,
+.site-footer {
+  background: $background-color;
+  padding: 30px;
+}
+
+.site-header {
+  border-bottom: 3px solid $dark-grey;
+  min-height: 200px;
+}
+
+.site-container{
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.site-footer {
+  border-top: 3px solid $dark-grey;
+  margin-top: auto;
+  text-align: center;
+}
+
+// Pins
+
+.pin-container{
+  padding: 10px;
+}
+
+.pin {
+  background-color: $background-color;
+  border-radius: 8px;
+  min-height: 343px;
+}
+
+.show-pin{
+  background-color: $background-color;
+  padding: 40px;
+}
+
+.logo-thumbnail {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+}
+
+.logo-thumbnail img{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: auto;
+  width: 100%;
+}
+
+.pin-body{
+  padding: 20px 30px 40px;
+}
+
+.url {
+  font-size: 80%;
+  word-break: break-all;
+}
+a.url,
+a:visited.url {
+  color: $text-color;
+}
+
+hr{
+  clear:both;
+}
+
+.pin-page{
+  max-width: 700px;
+  margin: 0 auto;
+
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+
+// Forms
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type='text'],
+input[type='submit'],
+button,
+.btn,
+a.btn,
+.input-group-addon,
+.form-control {
+  border-radius: 8px;
+  border: 0;
+  color: $text-color;
+  padding: 10px 12px;
+}
+
+input[type='submit'],
+button,
+.btn,
+.input-group-addon {
+  background: $dark-grey;
+}
+
+input[type='submit'],
+button {
+  margin-bottom: 1em;
+}
+
+input[type='text'],
+.form-control,
+input[type='submit']:hover,
+button:hover,
+.btn:hover, {
+  background: $light-grey;
+  color: black;
+}
+
+input[type='submit']:hover,
+button:hover,
+.btn:hover {
+  transition: background-color 0.5s ease;
 }

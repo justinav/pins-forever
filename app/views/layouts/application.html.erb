@@ -8,32 +8,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="header container">
-  <div class="user pull-right">
-  <% if current_page?(signup_path) %>
-    <h3>
-      <%= link_to "Login", login_path %>
-    </h3>
-  <% elsif !current_user.nil? && !current_page?(signup_path) %>
-    <h3>
-      <%= "Hi, #{current_user.first_name}!"%> |
-      <%= link_to "Logout", logout_path(current_user), method: :delete %>
-    </h3>
-  <% else %>
-    <h3>
-      <%= link_to "Sign Up", signup_path %> |
-      <%= link_to "Login", login_path %>
-    </h3>
-  <% end %>
+  <div class="site-wrapper">
+    <div class="site-header">
+      <div class="container">
+        <div class="user pull-right">
+          <% if current_page?(signup_path) %>
+          <h3>
+            <%= link_to "Login", login_path %>
+          </h3>
+          <% elsif !current_user.nil? && !current_page?(signup_path) %>
+          <h3>
+            <%= "Hi, #{current_user.first_name}!"%> |
+            <%= link_to "Logout", logout_path(current_user), method: :delete %>
+          </h3>
+          <% else %>
+          <h3>
+            <%= link_to "Sign Up", signup_path %> |
+            <%= link_to "Login", login_path %>
+          </h3>
+          <% end %>
+        </div>
+        <h1><a href="/">Learning to Code</a></h1>
+        <h3>A Collection of Ruby on Rails Resources for Beginners</h3>
+      </div>
+    </div>
+    <div class="site-container container">
+      <%= yield %>
+    </div>
+    <footer class="site-footer">
+      <p>text</p>
+    </footer>
   </div>
-    <h1><a href="/">Learning to Code</a></h1>
-    <h3>A Collection of Ruby on Rails Resources for Beginners</h3>
-    <hr/>
-  </div>
-  <div class="container">
-    <%= yield %>
-    <hr/>
-  </div>
-
 </body>
 </html>
