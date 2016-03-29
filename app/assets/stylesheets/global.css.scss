@@ -1,0 +1,108 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
+
+$brand-color: Gold;
+$text-color: #fff;
+$background-color: #303233;
+
+body {
+  background: url(asset-path('trigrey.png')) repeat;
+  background-size: 30px;
+  color: $text-color;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+a {
+  color: $brand-color;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  color: $brand-color;
+}
+
+.pin-container{
+  padding: 10px;
+}
+
+.pin {
+  padding: 40px;
+  min-height: 343px;
+  background-color: $background-color;
+  border-radius: 8px;
+}
+
+.show-pin{
+  background-color: $background-color;
+  padding: 40px;
+}
+
+.url {
+  word-break: break-all;
+}
+
+hr{
+  clear:both;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

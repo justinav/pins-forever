@@ -12701,3 +12701,98 @@ Processing by PinsController#index as HTML
   [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
   Rendered pins/index.erb within layouts/application (2.4ms)
 Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-03-29 13:07:24 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.8ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (15.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+Completed 200 OK in 2933ms (Views: 2906.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 13:07:27 -0400
+
+
+Started GET "/assets/application.self-4e7b6384add73c47b308c7744085d40ce3fccdf45edb187d4fc9536d8ba11c7f.css?body=1" for ::1 at 2016-03-29 13:07:28 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 13:07:28 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 13:07:28 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 13:07:28 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 13:07:28 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 13:07:28 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 13:07:53 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.5ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-4e7b6384add73c47b308c7744085d40ce3fccdf45edb187d4fc9536d8ba11c7f.css?body=1" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 13:07:53 -0400
+
+
+Started GET "/" for ::1 at 2016-03-29 13:08:08 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
+  Rendered pins/index.erb within layouts/application (2.9ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/cosmo-theme.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.css.scss to /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/assets/stylesheets/global.scss. (called from _app_views_layouts_application_html_erb__789896382704372226_70192604797780 at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/layouts/application.html.erb:6)
+Completed 200 OK in 1186ms (Views: 1183.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-d833f53e0e6fd1633972c999f9c9141a4ced6b9b746fbef9f3b30818bf876040.css?body=1" for ::1 at 2016-03-29 13:08:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-29 13:08:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-29 13:08:09 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-29 13:08:09 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-29 13:08:09 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-29 13:08:09 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-29 13:08:09 -0400
