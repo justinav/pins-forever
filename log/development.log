@@ -11382,3 +11382,37 @@ Processing by UsersController#login as HTML
   Rendered users/login.html.erb within layouts/application (0.5ms)
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
 Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2016-03-28 23:44:46 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 2871ms (Views: 2862.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/cosmo-bootswatch-theme.self-494bfd97a036a29f8465211bd2e631f412ab92d21a80c721fb6f07fe1994aa26.css?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/pins.self-45ca11095a7eaf5ca226e1938573b64e55e4d8f0d83cfb91ca9f1518d2102562.css?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/application.self-58a8242e06b129cc4ea3e23c9c7f9421c023a52866f5fc109a709328af4cd36d.css?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/scaffolds.self-c10979dbb4bce1c11a14180d4762b0f509f81e8e29e2e4be5094dd2b082ca7d9.css?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-28 23:44:49 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-28 23:44:49 -0400
