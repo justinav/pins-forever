@@ -19,8 +19,17 @@
   </div>
   <br>
   <div class="form">
+    <%= link_to repin_path(@pin), class: "btn", method: "post" do %>
+      Repin
+    <% end %>
     <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
     <%= link_to "Edit Post", edit_pin_path(@pin), html_options = {:class => "btn"} %>
+  </div>
+  <div class="pinned-by">
+    <h4>Pinned By</h4>
+    <% @users.each do |user| %>
+      <p class="btn"><%= user[:first_name] %> <%= user[:last_name] %></p>
+    <% end %>
   </div>
   <br/>
   <a href="/">

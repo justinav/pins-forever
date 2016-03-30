@@ -16416,3 +16416,1719 @@ Processing by PinsController#index as HTML
   [1m[35mPin Load (0.8ms)[0m  SELECT "pins".* FROM "pins" WHERE "pins"."user_id" = $1  [["user_id", 2]]
   Rendered pins/index.erb within layouts/application (39.5ms)
 Completed 200 OK in 131ms (Views: 108.7ms | ActiveRecord: 2.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (27.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePinnings (20160330145952)
+  [1m[35m (11.5ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/db/migrate/20160330145952_create_pinnings.rb:6)
+  [1m[36m (47.8ms)[0m  [1mCREATE TABLE "pinnings" ("id" serial primary key, "user_id" integer, "pin_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.0ms)[0m  CREATE  INDEX  "index_pinnings_on_user_id" ON "pinnings"  ("user_id")
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX  "index_pinnings_on_pin_id" ON "pinnings"  ("pin_id")[0m
+  [1m[35m (10.9ms)[0m  ALTER TABLE "pinnings" ADD CONSTRAINT "fk_rails_0a6c9fe37e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (5.3ms)[0m  [1mALTER TABLE "pinnings" ADD CONSTRAINT "fk_rails_221a32ada8"
+FOREIGN KEY ("pin_id")
+  REFERENCES "pins" ("id")
+[0m
+  [1m[35mPin Load (2.0ms)[0m  SELECT "pins".* FROM "pins" WHERE (user_id IS NOT NULL)
+  [1m[36mUser Load (12.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (11.9ms)[0m  INSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["pin_id", 2], ["created_at", "2016-03-30 15:01:29.488759"], ["updated_at", "2016-03-30 15:01:29.488759"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 3], ["pin_id", 3], ["created_at", "2016-03-30 15:01:29.505001"], ["updated_at", "2016-03-30 15:01:29.505001"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["pin_id", 4], ["created_at", "2016-03-30 15:01:29.508487"], ["updated_at", "2016-03-30 15:01:29.508487"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["pin_id", 5], ["created_at", "2016-03-30 15:01:29.512444"], ["updated_at", "2016-03-30 15:01:29.512444"]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160330145952"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pinnings'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pins'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2016-03-30 11:08:07 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (19.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (24.8ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (47.8ms)
+Completed 200 OK in 839ms (Views: 735.9ms | ActiveRecord: 50.7ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:08:09 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:08:09 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:08:09 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:08:09 -0400
+
+
+Started GET "/pins/name-learning-ruby" for ::1 at 2016-03-30 11:08:21 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"learning-ruby"}
+  [1m[35mPin Load (0.6ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "learning-ruby"]]
+  Rendered pins/show.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 29.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 11:08:32 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (6.6ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/name-restful-apis" for ::1 at 2016-03-30 11:08:39 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"restful-apis"}
+  [1m[35mPin Load (0.5ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "restful-apis"]]
+  Rendered pins/show.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 11:08:47 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (13.6ms)
+Completed 200 OK in 63ms (Views: 51.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:09:39 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.8ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 43.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:09:48 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.6ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (94.8ms)
+Completed 500 Internal Server Error in 276ms
+
+ActionView::Template::Error (undefined local variable or method `pin' for #<#<Class:0x007fa429bed410>:0x007fa42a1c8f60>):
+    19:   </div>
+    20:   <br>
+    21:   <div class="form">
+    22:     <%= link_to "Repin", repin_path(pin), html_options = {:class => "btn"}, method: "post" %>
+    23:     <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
+    24:     <%= link_to "Edit Post", edit_pin_path(@pin), html_options = {:class => "btn"} %>
+    25:   </div>
+  app/views/pins/show.erb:22:in `_app_views_pins_show_erb___2570983415665584644_70171525108300'
+  app/controllers/pins_controller.rb:10:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (145.9ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:10:34 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (85.6ms)
+Completed 500 Internal Server Error in 91ms
+
+ActionView::Template::Error (undefined local variable or method `pin' for #<#<Class:0x007fa429bed410>:0x007fa42de1da38>):
+    19:   </div>
+    20:   <br>
+    21:   <div class="form">
+    22:     <%= link_to repin_path(pin), class: "btn", method: "post" do %>
+    23:       Repin
+    24:     <% end %>
+    25:     <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
+  app/views/pins/show.erb:22:in `_app_views_pins_show_erb___2570983415665584644_70171560567800'
+  app/controllers/pins_controller.rb:10:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (18.8ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.1ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:10:37 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.9ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (180.0ms)
+Completed 500 Internal Server Error in 187ms
+
+ActionView::Template::Error (undefined local variable or method `pin' for #<#<Class:0x007fa429bed410>:0x007fa42a5b1eb0>):
+    19:   </div>
+    20:   <br>
+    21:   <div class="form">
+    22:     <%= link_to repin_path(pin), class: "btn", method: "post" do %>
+    23:       Repin
+    24:     <% end %>
+    25:     <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
+  app/views/pins/show.erb:22:in `_app_views_pins_show_erb___2570983415665584644_70171560567800'
+  app/controllers/pins_controller.rb:10:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (25.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (53.0ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:10:57 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (wrong number of arguments (4 for 0..3)):
+    19:   </div>
+    20:   <br>
+    21:   <div class="form">
+    22:     <%= link_to "Repin", repin_path(@pin), html_options = {:class => "btn"}, method: "post" %>
+    23:     <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
+    24:     <%= link_to "Edit Post", edit_pin_path(@pin), html_options = {:class => "btn"} %>
+    25:   </div>
+  app/views/pins/show.erb:22:in `_app_views_pins_show_erb___2570983415665584644_70171561334720'
+  app/controllers/pins_controller.rb:10:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.0ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.7ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:11:35 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.9ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (77.1ms)
+Completed 500 Internal Server Error in 90ms
+
+ActionView::Template::Error (undefined local variable or method `pin' for #<#<Class:0x007fa429bed410>:0x007fa42ecf0b50>):
+    19:   </div>
+    20:   <br>
+    21:   <div class="form">
+    22:     <%= link_to repin_path(pin), class: "btn", method: "post" do %>
+    23:       Repin!
+    24:     <% end %>
+    25:     <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
+  app/views/pins/show.erb:22:in `_app_views_pins_show_erb___2570983415665584644_70171522243600'
+  app/controllers/pins_controller.rb:10:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.1ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:11:43 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (8.2ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 61ms (Views: 53.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:11:43 -0400
+
+
+Started POST "/pins/repin/5" for ::1 at 2016-03-30 11:11:47 -0400
+Processing by PinsController#repin as HTML
+  Parameters: {"authenticity_token"=>"pQpmb2yvQpGkBmyRDGwgRDcxbZgSJUCYPrh2p+X0JEvpFRw2edbgw3hCS5U/ul/cYUPfQ9lE/xvTHbdlhkW25g==", "id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.5ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (12.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (11.2ms)[0m  INSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["pin_id", 5], ["created_at", "2016-03-30 15:11:47.908301"], ["updated_at", "2016-03-30 15:11:47.908301"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 194ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/users/2" for ::1 at 2016-03-30 11:11:47 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 11:11:51 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (8.6ms)
+Completed 200 OK in 40ms (Views: 31.0ms | ActiveRecord: 1.2ms)
+  [1m[36mPin Load (18.8ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (1.8ms)[0m  SELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1
+  [1m[36mPin Load (1.1ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (14.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+
+
+Started GET "/" for ::1 at 2016-03-30 11:19:17 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (38.4ms)
+Completed 200 OK in 143ms (Views: 90.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:19:17 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:19:17 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:19:17 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:19:17 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:19:17 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:19:17 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:19:18 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:19:20 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.3ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (16.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 65ms (Views: 39.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:20:28 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (23.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 104ms (Views: 78.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:20:29 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:20:32 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.1ms)
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 136ms (Views: 130.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:20:32 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:21:18 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.7ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (14.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:21:19 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:21:21 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.3ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.8ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:21:21 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:21:50 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (16.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 87ms (Views: 63.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:21:50 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:23:38 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (7.4ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:23:38 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:23:38 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:23:38 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:23:38 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:23:38 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:23:38 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:23:38 -0400
+  [1m[36mPin Load (3.4ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (1.7ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (1.2ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.9ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.7ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (1.5ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.9ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.6ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:28:37 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.9ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (32.1ms)
+Completed 500 Internal Server Error in 69ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    28:   <div class="pinned-by">
+    29:     <h4>Pinned By</h4>
+    30:     <%= @users.each do |user| %>
+    31:       <p class="btn"><%= user.first_name user.last_name %></p>
+    32:     <% end %>
+    33:   </div>
+    34:   <br/>
+  app/views/pins/show.erb:31:in `block in _app_views_pins_show_erb___2570983415665584644_70171530255680'
+  app/views/pins/show.erb:30:in `_app_views_pins_show_erb___2570983415665584644_70171530255680'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.8ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (72.3ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:28:53 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 69ms (Views: 64.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:28:53 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:29:11 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (11.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 73ms (Views: 34.0ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:29:11 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:29:13 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:29:14 -0400
+
+
+Started GET "/" for ::1 at 2016-03-30 11:32:17 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.5ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (18.0ms)
+Completed 200 OK in 81ms (Views: 51.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:32:19 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 46ms (Views: 29.5ms | ActiveRecord: 2.8ms)
+  [1m[36mPin Load (2.0ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  [1m[36mPin Load (0.7ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["pin_id", 5]]
+  [1m[36mPin Load (1.3ms)[0m  [1mSELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["pin_id", 5]]
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:37:53 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 46ms
+
+SyntaxError (/Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/pins/show.erb:32: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                               ^
+/Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/pins/show.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/pins/show.erb:43: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/pins/show.erb:32: syntax error, unexpected keyword_end
+  app/views/pins/show.erb:41: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/pins/show.erb:43: syntax error, unexpected keyword_end, expecting ')'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (81.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.6ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:37:58 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (6.1ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:37:58 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:41:01 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (1.0ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (27.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 124ms (Views: 94.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:41:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:41:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:41:02 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:41:02 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:41:02 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:41:02 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:41:02 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:41:03 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.3ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:41:03 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:41:09 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:41:09 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:41:09 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:41:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:41:09 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:41:09 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:41:09 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:41:10 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:41:37 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:41:37 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:41:52 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:41:52 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:42:55 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (1.2ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (18.2ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 122ms (Views: 97.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:42:55 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:42:55 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:42:55 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:42:56 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:42:56 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:42:56 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:42:56 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:42:57 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.6ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 71ms (Views: 63.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:42:58 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:43:06 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (6.7ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 40ms (Views: 35.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:43:06 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:43:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:43:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:43:06 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:43:06 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:43:07 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:43:07 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:43:20 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (20.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 93ms (Views: 70.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:43:20 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:43:29 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  Rendered pins/show.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 10ms
+
+SyntaxError (/Users/HOME/Sites/ruby/rails_apps/rails-pinning-app/app/views/pins/show.erb:31: syntax error, unexpected keyword_nil, expecting ')'
+...r.append=( user[:last_name] nil);@output_buffer.safe_append=...
+...                               ^):
+  app/views/pins/show.erb:31: syntax error, unexpected keyword_nil, expecting ')'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (38.2ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:43:35 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:43:35 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:46:20 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.8ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (21.5ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 105ms (Views: 78.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:46:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:46:20 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:46:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:46:20 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:46:20 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:46:20 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:46:21 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:47:01 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.6ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `[]' for #<Enumerator:0x007fa42df50978>):
+    27:   </div>
+    28:   <div class="pinned-by">
+    29:     <h4>Pinned By</h4>
+    30:       <p class="btn"><%= @users.map[:first_name] %> <%= @users.map[:last_name] %></p>
+    31:   </div>
+    32:   <br/>
+    33:   <a href="/">
+  app/views/pins/show.erb:30:in `_app_views_pins_show_erb___2570983415665584644_70171582931760'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.4ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:47:12 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.7ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (undefined method `[]' for #<Enumerator:0x007fa43098b058>):
+    28:   <div class="pinned-by">
+    29:     <h4>Pinned By</h4>
+    30:     <%= @users.map do |user| %>
+    31:       <p class="btn"><%= @users.map[:first_name] %> <%= user[:last_name] %></p>
+    32:     <% end %>
+    33:   </div>
+    34:   <br/>
+  app/views/pins/show.erb:31:in `block in _app_views_pins_show_erb___2570983415665584644_70171583955780'
+  app/views/pins/show.erb:30:in `_app_views_pins_show_erb___2570983415665584644_70171583955780'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.0ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.3ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:47:19 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:47:19 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:48:20 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (1.0ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (36.0ms)
+Completed 500 Internal Server Error in 75ms
+
+ActionView::Template::Error (undefined method `join' for #<Enumerator:0x007fa4309627e8>):
+    27:   </div>
+    28:   <div class="pinned-by">
+    29:     <h4>Pinned By</h4>
+    30:     <%= @users.map.join("\n") do |user| %>
+    31:       <p class="btn"><%= user[:first_name] %> <%= user[:last_name] %></p>
+    32:     <% end %>
+    33:   </div>
+  app/views/pins/show.erb:30:in `_app_views_pins_show_erb___2570983415665584644_70171583893100'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.4ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:48:29 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.6ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `join' for "Santa":String):
+    28:   <div class="pinned-by">
+    29:     <h4>Pinned By</h4>
+    30:     <%= @users.map do |user| %>
+    31:       <p class="btn"><%= user[:first_name].join("\n") %> <%= user[:last_name].join("\n") %></p>
+    32:     <% end %>
+    33:   </div>
+    34:   <br/>
+  app/views/pins/show.erb:31:in `block in _app_views_pins_show_erb___2570983415665584644_70171522892040'
+  app/views/pins/show.erb:30:in `_app_views_pins_show_erb___2570983415665584644_70171522892040'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.0ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:48:35 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.3ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:48:35 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:49:09 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:49:09 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:49:09 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:49:09 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:49:09 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:49:09 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:49:09 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:49:10 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:54:33 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.8ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (20.5ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 95ms (Views: 72.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:54:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:54:33 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:54:33 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:54:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:54:33 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:54:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:54:34 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:54:34 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:55:30 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined method `each' for #<String:0x007fa430968260>):
+    27:   </div>
+    28:   <div class="pinned-by">
+    29:     <h4>Pinned By</h4>
+    30:     <%= @users.inspect.each do |user| %>
+    31:       <p class="btn"><%= user[:first_name] %></p>
+    32:     <% end %>
+    33:   </div>
+  app/views/pins/show.erb:30:in `_app_views_pins_show_erb___2570983415665584644_70171583955480'
+  app/controllers/pins_controller.rb:11:in `show_by_name'
+
+
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.9ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/HOME/.rvm/gems/ruby-2.1.6/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.3ms)
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:55:40 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 50ms (Views: 45.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:55:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:55:40 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:55:41 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:55:41 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:55:41 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:55:41 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:55:41 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:55:47 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:55:47 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:55:57 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:55:57 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:58:33 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (1.1ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (21.7ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 103ms (Views: 80.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:58:33 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:58:33 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:58:33 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:58:33 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:58:33 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:58:33 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:58:34 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:59:10 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:59:10 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:59:26 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.4ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (5.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 151ms (Views: 146.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:59:27 -0400
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 11:59:43 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "swapfile"]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 11:59:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 11:59:43 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 11:59:43 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 11:59:43 -0400
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 11:59:43 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 11:59:43 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:59:43 -0400
