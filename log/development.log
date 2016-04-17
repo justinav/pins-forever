@@ -18132,3 +18132,382 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 11:59:43 -0400
+  [1m[36m (156.1ms)[0m  [1mDROP DATABASE IF EXISTS "coder-pinterest_test"[0m
+  [1m[35m (1946.3ms)[0m  CREATE DATABASE "coder-pinterest_test" ENCODING = 'unicode'
+  [1m[36mSQL (1.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (17.6ms)[0m  CREATE TABLE "categories" ("id" serial primary key, "name" character varying) 
+  [1m[36m (19.6ms)[0m  [1mCREATE TABLE "pinnings" ("id" serial primary key, "user_id" integer, "pin_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.0ms)[0m  CREATE  INDEX  "index_pinnings_on_pin_id" ON "pinnings" USING btree ("pin_id")
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX  "index_pinnings_on_user_id" ON "pinnings" USING btree ("user_id")[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "pins" ("id" serial primary key, "title" character varying, "url" character varying, "text" text, "slug" character varying, "category_id" integer, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp, "user_id" integer) 
+  [1m[36m (2.2ms)[0m  [1mCREATE  INDEX  "index_pins_on_category_id" ON "pins" USING btree ("category_id")[0m
+  [1m[35m (2.3ms)[0m  CREATE  INDEX  "index_pins_on_user_id" ON "pins" USING btree ("user_id")
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying) [0m
+  [1m[35m (4.8ms)[0m  ALTER TABLE "pinnings" ADD CONSTRAINT "fk_rails_99a536fa9e"
+FOREIGN KEY ("pin_id")
+  REFERENCES "pins" ("id")
+
+  [1m[36m (1.7ms)[0m  [1mALTER TABLE "pinnings" ADD CONSTRAINT "fk_rails_1e2b365ad4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "pins" ADD CONSTRAINT "fk_rails_7bda3bdc7a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (21.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (3.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160330145952')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150318194553')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150409201335')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160119214156')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160126030041')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160210023251')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160303210441')
+
+
+Started GET "/pins/name-swapfile" for ::1 at 2016-03-30 12:06:27 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"swapfile"}
+  [1m[35mPin Load (0.8ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "swapfile"]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 5]]
+  Rendered pins/show.erb within layouts/application (17.2ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 111ms (Views: 86.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 12:06:27 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-30 12:06:27 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-30 12:06:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-30 12:06:27 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 12:06:27 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 12:06:27 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 12:06:28 -0400
+
+
+Started POST "/pins/repin/5" for ::1 at 2016-03-30 12:06:29 -0400
+Processing by PinsController#repin as HTML
+  Parameters: {"authenticity_token"=>"f5B5rl0czVdxZnjI5nepdJz9/GU6LX+Ll1USKNXC728zjwP3SGVvBa0iX8zVodbsyo9OvvFMwAh68NPqtnN9wg==", "id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.8ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["pin_id", 5], ["created_at", "2016-03-30 16:06:29.970836"], ["updated_at", "2016-03-30 16:06:29.970836"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 35ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/users/2" for ::1 at 2016-03-30 12:06:29 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2/edit" for ::1 at 2016-03-30 12:06:32 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=2)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/_form.html.erb (20.7ms)
+  Rendered users/edit.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout/2" for ::1 at 2016-03-30 12:06:36 -0400
+Processing by UsersController#logout as HTML
+  Parameters: {"authenticity_token"=>"tEO9JxapdR2fBMWhtsMPnyVXXcakgIRQnQJmDfPtboP4XMd+A9DXT0NA4qWFFXAHcyXvHW/hO9Nwp6fPkFz8Lg==", "id"=>"2"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 12:06:36 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2016-03-30 12:06:36 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for ::1 at 2016-03-30 12:06:38 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-03-30 12:06:50 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J3PWMzx5QJ7NzMJCzouFH80XMPZeKTDd+xnLfWXSUYhrbKxqKQDizBGI5Ub9XfqHm2WCLZVIj14WvAq/BmPDJQ==", "user"=>{"first_name"=>"Iron", "last_name"=>"Maiden", "email"=>"iron@maiden.com", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'iron@maiden.com' LIMIT 1[0m
+  [1m[35mSQL (18.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Iron"], ["last_name", "Maiden"], ["email", "iron@maiden.com"], ["password_digest", "$2a$10$Ks2vQSXrIXx7ltlSOh9K1ekLOJZACB3yjRR7ZEM4y17pYPmd35xR."], ["created_at", "2016-03-30 16:06:50.727568"], ["updated_at", "2016-03-30 16:06:50.727568"]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 126ms (ActiveRecord: 23.9ms)
+
+
+Started GET "/users/4" for ::1 at 2016-03-30 12:06:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2016-03-30 12:06:50 -0400
+Processing by UsersController#login as HTML
+  Rendered users/login.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=NULL)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for ::1 at 2016-03-30 12:06:57 -0400
+Processing by UsersController#authenticate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e72urIWneo69RlLlWYcBm1TzjBRaKwjAuZoO0rRWXb83otT1kN7Y3GECdeFqUX4DAoE+z5FKt0NUP88Q1+fPEg==", "email"=>"iron@maiden.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "iron@maiden.com"]]
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 104ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4" for ::1 at 2016-03-30 12:06:57 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 12:07:01 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.5ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (9.6ms)
+Completed 200 OK in 86ms (Views: 83.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/name-restful-apis" for ::1 at 2016-03-30 12:07:05 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"restful-apis"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "restful-apis"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 4]]
+  Rendered pins/show.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/pins/repin/4" for ::1 at 2016-03-30 12:07:07 -0400
+Processing by PinsController#repin as HTML
+  Parameters: {"authenticity_token"=>"tsTrEaT0FpnwYWnN5/uTI2cBHPXtX04nOja+UaC3odz625FIsY20yywlTsnULey7MXOuLiY+8aTXk3+TwwYzcQ==", "id"=>"4"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pin_id", 4], ["created_at", "2016-03-30 16:07:07.842265"], ["updated_at", "2016-03-30 16:07:07.842265"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 15ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/users/4" for ::1 at 2016-03-30 12:07:07 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 12:07:11 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.5ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (6.0ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pins" for ::1 at 2016-03-30 12:07:16 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (6.1ms)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pins/name-learning-ruby" for ::1 at 2016-03-30 12:07:21 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"learning-ruby"}
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "learning-ruby"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 1]]
+  Rendered pins/show.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/pins/repin/1" for ::1 at 2016-03-30 12:07:24 -0400
+Processing by PinsController#repin as HTML
+  Parameters: {"authenticity_token"=>"dxnBDCKEC5ToHGD55iqgORVm6KXMHANtlVdBY0z4dr07BrtVN/2pxjRYR/3V/N+hQxRafgd9vO548oChL0nkEA==", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pin_id", 1], ["created_at", "2016-03-30 16:07:24.497611"], ["updated_at", "2016-03-30 16:07:24.497611"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/4" for ::1 at 2016-03-30 12:07:24 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 12:07:26 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (5.5ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pins/name-ruby-slids" for ::1 at 2016-03-30 12:07:28 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"ruby-slids"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "ruby-slids"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 2]]
+  Rendered pins/show.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/pins/repin/2" for ::1 at 2016-03-30 12:07:30 -0400
+Processing by PinsController#repin as HTML
+  Parameters: {"authenticity_token"=>"EXvFBh9NTjEZG0f5Tjy934K/Y1oVb/KsLOMDgA/8Dw9dZL9fCjTsY8VfYP196sJH1M3Rgd4OTS/BRsJCbE2dog==", "id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.3ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "pinnings" ("user_id", "pin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["pin_id", 2], ["created_at", "2016-03-30 16:07:30.536134"], ["updated_at", "2016-03-30 16:07:30.536134"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/users/4" for ::1 at 2016-03-30 12:07:30 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 12:07:32 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.4ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (5.8ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pins/name-learning-ruby" for ::1 at 2016-03-30 12:07:34 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"learning-ruby"}
+  [1m[36mPin Load (0.4ms)[0m  [1mSELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1[0m  [["slug", "learning-ruby"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1  [["pin_id", 1]]
+  Rendered pins/show.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-03-30 13:35:24 -0400
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (65.3ms)[0m  SELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (0.8ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (147.3ms)
+Completed 200 OK in 988ms (Views: 821.1ms | ActiveRecord: 66.1ms)
+
+
+Started GET "/assets/application.self-0a5fae863180f4d7607a34f79564ea7992ad3300a710b417cea41f7e6a5cf1d5.css?body=1" for ::1 at 2016-03-30 13:35:26 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-30 13:35:26 -0400
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for ::1 at 2016-03-30 13:35:26 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for ::1 at 2016-03-30 13:35:26 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-06 16:46:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (23.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as HTML
+  [1m[35mUser Load (5.0ms)[0m  SELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPin Load (24.0ms)[0m  [1mSELECT "pins".* FROM "pins"[0m
+  Rendered pins/index.erb within layouts/application (46.1ms)
+Completed 200 OK in 3300ms (Views: 3174.6ms | ActiveRecord: 50.9ms)
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/assets/application.self-dfc85bcd2bd207676393d51a6a3d288cb025ba9ccf4e91b1ab6b034e8f75deaf.css?body=1" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/assets/trigrey-13cfd143ddbcd31bacce1f3f76854956937e120c8a3bca89e36dc6685e395ebd.png" for 127.0.0.1 at 2016-04-06 16:46:54 -0400
+
+
+Started GET "/pins/name-learning-ruby" for 127.0.0.1 at 2016-04-06 16:47:06 -0400
+Processing by PinsController#show_by_name as HTML
+  Parameters: {"slug"=>"learning-ruby"}
+  [1m[35mPin Load (10.1ms)[0m  SELECT  "pins".* FROM "pins" WHERE "pins"."slug" = $1 LIMIT 1  [["slug", "learning-ruby"]]
+  [1m[36mUser Load (24.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "pinnings" ON "users"."id" = "pinnings"."user_id" WHERE "pinnings"."pin_id" = $1[0m  [["pin_id", 1]]
+  Rendered pins/show.erb within layouts/application (47.4ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 181ms (Views: 54.3ms | ActiveRecord: 36.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-06 16:47:13 -0400
+Processing by PinsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE (id=4)  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPin Load (0.5ms)[0m  SELECT "pins".* FROM "pins"
+  Rendered pins/index.erb within layouts/application (19.2ms)
+Completed 200 OK in 71ms (Views: 51.7ms | ActiveRecord: 1.1ms)

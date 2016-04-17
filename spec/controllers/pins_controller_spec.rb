@@ -4,7 +4,7 @@ RSpec.describe PinsController do
 		it 'renders index template' do
 			get :index
 			expect(response).to render_template("index")
-			expect(assigns[:pins]).to eq(User.where("id=?",session[:user_id]).first.pins.all)
+			expect(assigns[:pins]).to eq(Pin.all)
 		end
 	end
 

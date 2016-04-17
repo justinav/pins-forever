@@ -17,4 +17,9 @@ FactoryGirl.define do
       create_list(:pin, 3)
     end
   end
+
+  factory :pinning do
+    pin
+    user
+  end
 end
