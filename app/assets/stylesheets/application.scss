@@ -2,5 +2,396 @@
  *= require_self
  */
 
-// @import 'cosmo-theme';
-@import 'global';
+@import 'https://fonts.googleapis.com/css?family=Fira+Mono:400,700|Work+Sans:400,600,700';
+
+$brand-color: #d46d63;
+$text-color: #333333;
+$background-color: #f8f8f8;
+$light-grey: #bebebe;
+
+$largeText: 1.33rem;
+$smallText: 0.8rem;
+
+@mixin single-layout($width){
+  max-width: $width;
+  margin: 0 auto;
+}
+
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  @extend html;
+  background: $background-color;
+  background-size: 30px;
+  color: $text-color;
+  font-family: 'Works Sans', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+a,
+a:visited {
+  color: $brand-color;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  -webkit-filter: grayscale(90%) brightness(140%);
+  filter: grayscale(90%) brightness(140%);
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+// Typography
+
+.logo {
+  font-size: 15vw;
+  max-width: 200px;
+  margin: 0;
+
+  & a {
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+.description {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+p {
+  font-family: 'Fira Mono';
+}
+
+h4 {
+  font-size: 1.2em;
+  margin-bottom: .8em;
+}
+
+// Layout
+
+.site-header,
+.site-footer {
+  background: $background-color;
+  padding: 30px;
+}
+
+.site-header {
+  min-height: 200px;
+}
+
+.site-container{
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.site-footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: $smallText;
+}
+
+.container {
+  padding: .5em;
+  margin: .5em auto;
+
+  .right {
+    text-align: right;
+    padding-right: 3em;
+  }
+}
+
+// Grid
+
+.grid--3 {
+  background: #ffffff;
+  margin-bottom: 2em;
+  border: 3px solid;
+}
+
+// Pins
+
+.show-pin{
+  padding: 1em;
+  background: #fff;
+  border: 3px solid;
+  margin-bottom: 1em;
+}
+
+.logo-thumbnail {
+  width: 100%;
+}
+
+.logo-thumbnail img{
+  height: auto;
+  width: 100%;
+}
+
+.pin-body{
+  padding: 20px 30px 40px;
+}
+
+.url {
+  font-size: $smallText;
+  word-break: break-all;
+}
+
+a.url,
+a:visited.url {
+  color: $text-color;
+  text-decoration: underline;
+}
+
+.pinned-by span,
+.pinned-by a {
+  font-weight: 400;
+  border-bottom: 2px solid;
+  padding-bottom: 3px;
+  margin-right: .5em;
+}
+
+hr{
+  clear:both;
+}
+
+.pin-page{
+  @include single-layout(500px);
+
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+
+// Forms
+
+.form-container {
+  @include single-layout(500px);
+}
+
+
+input[type='submit'],
+button,
+.btn,
+a.btn,
+input[type='text'],
+.input-group-addon,
+.form-control {
+  border: 3px solid $text-color;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+input[type='submit'],
+button,
+.btn,
+a.btn {
+  border-radius: 8px;
+}
+
+input[type='text'],
+.form-control,
+a.btn,
+.btn {
+  background: #fff;
+  color: $text-color;
+  margin-right: .5em;
+}
+
+button,
+.btn-block,
+input[type='submit'] {
+  background: $text-color;
+  color: $background-color;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+
+input[type='submit']:hover,
+button:hover,
+.btn:hover, {
+  background: $light-grey;
+  color: $text-color;
+}
+
+input[type='submit']:hover,
+button:hover,
+.btn:hover {
+  transition: background-color 0.5s ease;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  border: 3px solid;
+}
+
+.input-group-addon {
+  background: $text-color;
+  color: $background-color;
+  padding-right: 1em;
+  border: 0;
+  border-radius: 0;
+  border-right: 3px solid;
+}
+
+input.form-control {
+  border: 0;
+  flex: auto;
+  background: #fff;
+  margin: 0;
+}
+
+label {
+  font-weight: 700;
+  display: block;
+}
+
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+input[type="file"] + label {
+  display: block;
+  border: 3px solid;
+  background: #fff;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 1em;
+  margin: .5em auto;
+  text-align: center;
+}
+
+input[type="file"] + label:before {
+  font-family: FontAwesome;
+  content: '\f093';
+  padding-right: .5em;
+}
+
+select {
+  margin-top: .5em;
+  font-size: 1em;
+  width: 100%;
+  height: 40px;
+}
+
+
+// Desktops & tablets
+@media only screen and (min-width: 768px) {
+  .logo {
+    font-size: 7.5vw;
+  }
+  .container:before,
+  .container:after,
+  .grid:before,
+  .grid:after,
+  .row:before,
+  .row:after {
+    content: '';
+    display: table;
+  }
+
+  .container:after,
+  .grid:after,
+  .row:after {
+    clear: both;
+  }
+
+  .row {
+    margin-bottom: 2em;
+  }
+
+  .grid--3 {
+    float: left;
+    width: calc(33% - 2em);
+    margin-top: 0;
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-bottom: 0;
+
+    &:nth-of-type(3) {
+      margin-right: 0;
+    }
+  }
+
+  .container-left,
+  .container-right {
+    float: left;
+    width: 50%;
+    margin: 0;
+  }
+
+  .container-right {
+    text-align: right;
+  }
+}
