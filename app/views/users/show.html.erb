@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="form-container">
+  <p id="notice"><%= notice %></p>
 
-  <h2><%= "Welcome back, #{@user.first_name}!"%></h2>
-  <%= link_to 'Edit Your Info', edit_user_path(@user) %>
+    <div class="container">
+      <h2><%= "Welcome back, #{@user.first_name}!"%></h2>
+      <%= link_to 'Edit Your Info', edit_user_path(@user) %>
 
-  <h4>First name:</h4>
-  <p><%= @user.first_name %></p>
-  <h4>Last name:</h4>
-  <p><%= @user.last_name %></p>
-  <h4>Email:</h4>
-  <p><%= @user.email %></p>
+      <p><strong>First name:</strong> <%= @user.first_name %></p>
+      <p><strong>Last name:</strong> <%= @user.last_name %></p>
+      <p><strong>Email:</strong> <%= @user.email %></p>
+    </div>
+
+    <div class="container">
+     <%= link_to 'Saved Pins', root_path, html_options = {:class => "btn"} %>
+    </div>
+</div>

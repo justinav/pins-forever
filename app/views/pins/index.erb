@@ -1,10 +1,14 @@
-<div class="pins">
+<div class="container right">
+  <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
+</div>
+
+<div class="grid container">
   <% @pins.each_slice(3) do |row| %>
   <div class="row">
     <% row.each do |pin| %>
-    <div class="pin-container col-md-4">
-      <div class="pin">
-        <div class="pin-header">
+    <div class="grid--3">
+      <div class="grid-item">
+        <div class="headline">
           <div class="logo-thumbnail">
             <% if !pin.image.url.nil? %>
             <img src="<%= pin.image.url(:medium) %>">
@@ -28,7 +32,4 @@
     <% end %>
   </div>
   <% end %>
-</div>
-<div class="form">
-  <%= link_to "Add New", new_pin_path, html_options = {:class => "btn"} %>
 </div>

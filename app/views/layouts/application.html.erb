@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Coder Pinterest</title>
+  <title>Pins Forever</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= favicon_link_tag '/favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -12,7 +12,10 @@
   <div class="site-wrapper">
     <div class="site-header">
       <div class="container">
-        <div class="user pull-right">
+        <div class="container-left">
+          <h1 class="logo"><a href="/">Pins Forever</a></h1>
+        </div>
+        <div class="user container-right">
           <% if current_page?(signup_path) %>
           <h3>
             <%= link_to "Login", login_path %>
@@ -29,15 +32,13 @@
           </h3>
           <% end %>
         </div>
-        <h1><a href="/">Learning to Code</a></h1>
-        <h3>A Collection of Ruby on Rails Resources for Beginners</h3>
       </div>
     </div>
     <div class="site-container container">
       <%= yield %>
     </div>
     <footer class="site-footer">
-      <small>Thanks for visiting :-)</small>
+    <p>Use Pins Forever to collect resources and inspiration</p>
     </footer>
   </div>
 </body>
