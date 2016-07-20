@@ -126,6 +126,12 @@ h4 {
   margin-bottom: .8em;
 }
 
+.back-btn:before {
+  font-family: 'FontAwesome';
+  content: '\f060';
+  padding-right: .5em;
+}
+
 // Layout
 
 .site-header,
